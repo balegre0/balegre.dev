@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "@fontsource/syne";
+
+:root {
+	--font-syne: "Syne Variable", sans-serif;
+}
+
+body {
+	font-family: var(--font-syne);
+}
