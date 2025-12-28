@@ -8,11 +8,7 @@
 
     const { title, description }: MainHeadProps = $props();
 
-    const canonicalURL = $derived(
-        page.url.origin
-            ? new URL(page.url.pathname, page.url.origin).href
-            : page.url.pathname,
-    );
+    const canonicalURL = $derived(page.url.href);
 </script>
 
 <svelte:head>
@@ -21,10 +17,10 @@
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
-    <meta name="og:type" content="website" />
-    <meta name="og:url" content={canonicalURL} />
-    <meta name="og:title" content={title} />
-    <meta name="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
